@@ -38,6 +38,12 @@ public class ScoreV5Fun {
 
     }
 
+    void eval_grade(){
+
+
+    }
+
+
 
     void print(){
 
@@ -46,10 +52,9 @@ public class ScoreV5Fun {
         System.out.println("수학 : " + math);
         System.out.println("국어 : " + kor);
         System.out.println("-------------------------");
-
         System.out.println("합계 : " + sum);
-        System.out.println("과목평균 : " + avg);
-        System.out.println("과목평균변형 포맷 : " + avg);
+        System.out.println("과목평균과제값 : " + (double)(Math.round(avg*100))/100);
+        System.out.println("과목평균변형 포맷 미적용 : " + avg);
         System.out.printf("평균 : %.1f\n", avg);
 
     }

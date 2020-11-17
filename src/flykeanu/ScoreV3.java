@@ -21,7 +21,7 @@ public class ScoreV3 {
 
     public static void main(String[] args) {
 
-        String name = "송준호";
+        String name;
         //성적데이터를 키보드로 입력받기 위해
         //Scanner 클래스 초기화
         Scanner scanner = new Scanner(System.in);

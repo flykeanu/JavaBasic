@@ -15,15 +15,15 @@ public class ScoreV1 {
         String name = "송준호";
         int eng = 77;
         int math = 88;
-        int kor = 98;
+        int kor = 70;
         int sum;
         float avg;
-
+        char grd = '가';
 
 
             sum = eng + math + kor;
 
-            avg = (float)(eng + math + kor) / 3;
+            avg = (float)(sum) / 3;
 
             System.out.println("이름 : " + name);
             System.out.println("영어 : " + eng);
@@ -33,24 +33,24 @@ public class ScoreV1 {
             System.out.println("과목평균 : " + avg);
 
         if(avg>=90) {
-
-            System.out.println("평어는 :  수 입니다.");
+            grd = '수';
+            System.out.println("평어는 : " + grd +  "입니다.");
         }
         else if(avg>=80) {
-
-            System.out.println("평어는 :  우 입니다.");
+             grd = '우';
+            System.out.println("평어는 : " + grd +  "입니다.");
 
         }else if(avg>=70) {
-
-            System.out.println("평어는 :  미 입니다.");
+             grd = '미';
+            System.out.println("평어는 : " + grd +  "입니다.");
 
         }else if(avg>=60) {
-
-                    System.out.println("평어는 :  양 입니다.");
+             grd = '양';
+                    System.out.println("평어는 : " + grd +  "입니다.");
                 }
             else{
-
-                System.out.println("평어는 :  가 입니다.");}
+             grd = '가';
+                System.out.println("평어는 : " + grd +  "입니다.");}
         }
 
 

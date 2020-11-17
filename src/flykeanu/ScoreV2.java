@@ -12,18 +12,30 @@ public class ScoreV2 {
 
         char grd = '가';
 
+
         //처리
         sum = kor + eng + math;
-        mean = (double)sum/3;
+        mean = (double)sum/3;    //sum/3.0;
+        grd = (mean >= 90) ?  '수' :
+        (mean >= 90) ?  '우' :
+        (mean >= 90) ?  '미' :
+        (mean >= 90) ?  '양' : '가';
+
+
+
+
 
 
         //결과처리
     System.out.println("이름 : " + name);
     System.out.println("국어 : " + kor);
     System.out.println("수학 : " + math);
+    System.out.println("영어 : " + eng);
+    System.out.println("--------------------------");
+
     System.out.println("합계 : " + sum);
     System.out.println("평균 : " + mean);
-    System.out.println("평어 : " + grd);
+    System.out.println("학점 : " + grd);
 
 
 

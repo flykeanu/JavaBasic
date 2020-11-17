@@ -38,35 +38,37 @@ public class ScoreV5FunCopyFinal {
 
     void eval_grade(){
 
-    switch ((int) (avg / 10)) {
-            case 10:
-                grd = '秀';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
+    if (avg >= 90){
+            grd = '秀';
+            System.out.println("평어는 : " + grd + " 입니다.");
 
-            case 9:
-                grd = '秀';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
+        }
+            else if(avg >=80) {
+            grd = '秀';
+            System.out.println("평어는 : " + grd + " 입니다.");
 
-            case 8:
+        }
+            else if(avg >=70){
                 grd = '優';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-            case 7:
-                grd = '美';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-            case 6:
-                grd = '良';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
+                System.out.println("평어는 : " + grd + " 입니다.");
 
-            default:
+                }
+         else if(avg >=60) {
+            grd = '美';
+            System.out.println("평어는 : " + grd + "입니다.");
+
+        }
+        else if(avg >=50) {
+            grd = '良';
+            System.out.println("평어는 : " + grd + "입니다.");
+
+        }
+        else{
                 grd = '佳';
                 System.out.println("평어는 : " + grd + "입니다.");
 
-                break;
+
+
         }
 
         }

@@ -17,7 +17,7 @@ package flykeanu;
 
  */
 
-public class ScoreV3 {
+public class ScoreV4Teacher {
 
     public static void main(String[] args) {
 
@@ -35,7 +35,8 @@ public class ScoreV3 {
         int sum = 0;
         double avg = 0.0;
         char grd = '가';
-
+        //String.format(형식지정자, 변수들);
+        avg = Double.parseDouble(String.format("%.1f" , avg));
 
         sum = eng + math + kor;
 
@@ -49,7 +50,8 @@ public class ScoreV3 {
 
         System.out.println("합계 : " + sum);
         System.out.println("과목평균 : " + avg);
-
+        System.out.println("과목평균변형 포맷 : " + avg);
+        System.out.printf("평균 : %.1f\n", avg);
 
         switch ((int) (avg / 10)) {
             case 10:
@@ -74,34 +76,8 @@ public class ScoreV3 {
                 grd = '양';
                 System.out.println("평어는 : " + grd + "입니다.");
                 break;
-            case 5:
-                grd = '가';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
 
-            case 4:
-                grd = '가';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-
-            case 3:
-                grd = '가';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-
-            case 2:
-                grd = '가';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-
-            case 1:
-                grd = '가';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-
-            case 0:
-                grd = '가';
-                System.out.println("평어는 : " + grd + "입니다.");
+                default : grd = '가';
                 break;
         }
 

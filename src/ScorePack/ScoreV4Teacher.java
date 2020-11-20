@@ -1,4 +1,4 @@
-package flykeanu;
+package ScorePack;
 
  import java.util.Scanner;
 
@@ -17,72 +17,42 @@ package flykeanu;
 
  */
 
-public class ScoreV5Fun {
+public class ScoreV4Teacher {
 
-    String name;
-    int eng ;
-    int math ;
-    int kor ;
-    int sum = 0;
-    double avg = 0.0;
-    char grd = '가';
-
-    void eval_sum(){
-
-        sum = eng + math + kor;
-
-    }
-
-    void eval_avg(){
-        avg = (double)sum / 3;
-
-    }
-
-    void eval_grade(){
-
-
-    }
-
-
-
-    void print(){
-
-        System.out.println("이름 : " + name);
-        System.out.println("영어 : " + eng);
-        System.out.println("수학 : " + math);
-        System.out.println("국어 : " + kor);
-        System.out.println("-------------------------");
-        System.out.println("합계 : " + sum);
-        System.out.println("과목평균과제값 : " + (double)(Math.round(avg*100))/100);
-        System.out.println("과목평균변형 포맷 미적용 : " + avg);
-        System.out.printf("평균 : %.1f\n", avg);
-
-    }
 
     public static void main(String[] args) {
 
-        ScoreV5Fun s1 = new ScoreV5Fun();
-
-
+        String name;
         //성적데이터를 키보드로 입력받기 위해
         //Scanner 클래스 초기화
         Scanner scanner = new Scanner(System.in);
         System.out.print("이름을 입력하세요 : ");
-        s1.name = scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("");
         System.out.print("점수를 입력하세요 : ");
-        s1.eng = scanner.nextInt();
-        s1.math = scanner.nextInt();
-        s1.kor = scanner.nextInt();
+        int eng = scanner.nextInt();
+        int math = scanner.nextInt();
+        int kor = scanner.nextInt();
         int sum = 0;
         double avg = 0.0;
         char grd = '가';
         //String.format(형식지정자, 변수들);
         avg = Double.parseDouble(String.format("%.1f" , avg));
 
-        s1.eval_sum();
-        s1.eval_avg();
-        s1.print();
+        sum = eng + math + kor;
+
+        avg = (double)sum / 3;
+
+        System.out.println("이름 : " + name);
+        System.out.println("영어 : " + eng);
+        System.out.println("수학 : " + math);
+        System.out.println("국어 : " + kor);
+        System.out.println("-------------------------");
+
+        System.out.println("합계 : " + sum);
+        System.out.println("과목평균 : " + avg);
+        System.out.println("과목평균변형 포맷 : " + avg);
+        System.out.printf("평균 : %.1f\n", avg);
 
         switch ((int) (avg / 10)) {
             case 10:

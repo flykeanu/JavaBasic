@@ -1,4 +1,4 @@
-package flykeanu;
+package ScorePack;
 
  import java.util.Scanner;
 

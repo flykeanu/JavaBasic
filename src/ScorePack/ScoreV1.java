@@ -1,4 +1,4 @@
-package flykeanu;
+package ScorePack;
 
 /**
   파일명 : ScoreV1

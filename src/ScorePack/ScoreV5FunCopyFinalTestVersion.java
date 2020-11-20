@@ -1,9 +1,8 @@
-package flykeanu;
+package ScorePack;
 
  import java.util.Scanner;
 
-
-public class ScoreV5FunCopy4444 {
+public class ScoreV5FunCopyFinalTestVersion {
 
     String name;
     int eng ;
@@ -13,7 +12,7 @@ public class ScoreV5FunCopy4444 {
     double avg = 0.0;
     char grd = '가';
 
-    void eval_InputScore(){
+    void eval_InputScore(){     //ReadSungJuk
         Scanner sc = new Scanner(System.in);
         System.out.print("이름을 입력하세요 : ");
         name = sc.nextLine();
@@ -26,52 +25,55 @@ public class ScoreV5FunCopy4444 {
     }
 
 
-    void eval_sum(){
+    void eval_sum(){    //ComputerSungJuk1
 
         sum = eng + math + kor;
 
     }
 
-    void eval_avg() {
+    void eval_avg() {   //ComputerSungJuk2
 
         avg = (double) sum / 3;
     }
-    void eval_grade(){
 
-        switch ((int) (avg / 10)) {
-            case 10:
-                grd = '秀';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
+    void eval_grade(){    //ComputerSungJuk3
 
-            case 9:
-                grd = '秀';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
+    if (avg >= 90){
+            grd = '秀';
+            System.out.println("평어는 : " + grd + " 입니다.");
 
-            case 8:
-                grd = '優';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-            case 7:
+        }
+            else if(avg >=80) {
+            grd = '優';
+            System.out.println("평어는 : " + grd + " 입니다.");
+
+        }
+            else if(avg >=70){
                 grd = '美';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
-            case 6:
-                grd = '良';
-                System.out.println("평어는 : " + grd + "입니다.");
-                break;
+                System.out.println("평어는 : " + grd + " 입니다.");
 
-            default:
+                }
+         else if(avg >=60) {
+            grd = '良';
+            System.out.println("평어는 : " + grd + "입니다.");
+
+        }
+        else if(avg >=50) {
+            grd = '佳';
+            System.out.println("평어는 : " + grd + "입니다.");
+
+        }
+        else{
                 grd = '佳';
                 System.out.println("평어는 : " + grd + "입니다.");
 
-                break;
-        }
+
 
         }
 
-    void print(){
+        }
+
+    void print(){       //PrintSungJuk
 
         System.out.println("이름 : " + name);
         System.out.println("영어 : " + eng);
@@ -89,38 +91,33 @@ public class ScoreV5FunCopy4444 {
 
         //첫번째 학생
 
-        ScoreV5FunCopy4444 s1 = new ScoreV5FunCopy4444();
+        ScoreV5FunCopyFinalTestVersion s1 = new ScoreV5FunCopyFinalTestVersion();
 
         s1.eval_InputScore();
         s1.eval_sum();
         s1.eval_avg();
-
-
+        s1.eval_grade();
+        s1.print();
 
         //두번째 학생
 
-        ScoreV5FunCopy4444 s2 = new ScoreV5FunCopy4444();
+        ScoreV5FunCopyFinalTestVersion s2 = new ScoreV5FunCopyFinalTestVersion();
 
         s2.eval_InputScore();
         s2.eval_sum();
         s2.eval_avg();
-
-
+        s2.eval_grade();
+        s2.print();
 
         //세번째 학생
 
-        ScoreV5FunCopy4444 s3 = new ScoreV5FunCopy4444();
+        ScoreV5FunCopyFinalTestVersion s3 = new ScoreV5FunCopyFinalTestVersion();
 
         s3.eval_InputScore();
         s3.eval_sum();
         s3.eval_avg();
         s3.eval_grade();
-        s1.print();
-        s1.eval_grade();
-        s2.print();
-        s2.eval_grade();
         s3.print();
-        s3.eval_grade();
     }
 }
 

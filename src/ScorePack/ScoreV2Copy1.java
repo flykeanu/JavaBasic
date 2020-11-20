@@ -1,6 +1,6 @@
-package flykeanu;
+package ScorePack;
 
-public class ScoreV2 {
+public class ScoreV2Copy1 {
     public static void main(String[] args) {
         //변수선언
         String name = "김병만";    // = 양옆으로 띄워서 가독성을 높이자
@@ -24,7 +24,11 @@ public class ScoreV2 {
 
 
 
+/*
+출력문은 한번만 쓰기로 함
+Math.round()이용해서 평균은 소수점 둘째자리까지 끊어서 출력함
 
+ */
 
         //결과처리
     System.out.println("이름 : " + name);

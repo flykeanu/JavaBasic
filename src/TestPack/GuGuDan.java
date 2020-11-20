@@ -1,4 +1,4 @@
-package flykeanu;
+package TestPack;
 
 public class GuGuDan {
 

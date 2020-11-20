@@ -1,4 +1,4 @@
-package flykeanu;
+package ScorePack;
 
 public class ScoreV4Date18 {
 

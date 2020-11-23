@@ -20,154 +20,150 @@ import java.util.Scanner;
 public class SungJuk7Main {
     public static void main(String[] args) {
         MidSungJuk2 msj2 = new MidSungJuk2();
+
         msj2.readSungJuk();
         msj2.computeSungJuk();
         msj2.printSungJuk();
+
+        FinalSungJuk2 fsj2 = new FinalSungJuk2();
+
+        fsj2.readSungJuk();
+        fsj2.computeSungJuk();
+        fsj2.printSungJuk();
+
+
     }
 }
-class SungJukV7 {
 
+abstract class SungJukV7 {
     protected String name;
-    protected int eng;
-    protected int math;
     protected int kor;
-    protected int sum = 0;
-    protected double avg = 0.0;
-    protected char grd = '가';
+    protected int eng;
+    protected int mat;
+    protected int sum;
+    protected double mean;
+    protected char grd;
 
-    public SungJukV7() {
-    }
+    public SungJukV7() { }
 
-    public SungJukV7(String name, int eng, int math, int kor, int sum, double avg, char grd) {
+    public SungJukV7(String name, int kor, int eng, int mat) {
         this.name = name;
-        this.eng = eng;
-        this.math = math;
         this.kor = kor;
-        this.sum = sum;
-        this.avg = avg;
-        this.grd = grd;
+        this.eng = eng;
+        this.mat = mat;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getEng() {
-        return eng;
-    }
-
-    public int getMath() {
-        return math;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getKor() {
         return kor;
     }
 
-    public int getSum() {
-        return sum;
+    public void setKor(int kor) {
+        this.kor = kor;
     }
 
-    public double getAvg() {
-        return avg;
-    }
-
-    public char getGrd() {
-        return grd;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public int getEng() {
+        return eng;
     }
 
     public void setEng(int eng) {
         this.eng = eng;
     }
 
-    public void setMath(int math) {
-        this.math = math;
+    public int getMat() {
+        return mat;
     }
 
-    public void setKor(int kor) {
-        this.kor = kor;
+    public void setMat(int mat) {
+        this.mat = mat;
+    }
+
+    public int getSum() {
+        return sum;
     }
 
     public void setSum(int sum) {
         this.sum = sum;
     }
 
-    public void setAvg(double avg) {
-        this.avg = avg;
+    public double getMean() {
+        return mean;
+    }
+
+    public void setMean(double mean) {
+        this.mean = mean;
+    }
+
+    public char getGrd() {
+        return grd;
     }
 
     public void setGrd(char grd) {
         this.grd = grd;
     }
 }
-    abstract class SungJunk7 {
-        abstract interface ISungJukV7 {
 
-            void eval_InputScore() {     //ReadSungJuk
-                Scanner sc = new Scanner(System.in);
-                System.out.print("이름을 입력하세요 : ");
-                name = sc.nextLine();
-                System.out.println("");
-                System.out.print(name + "의 점수를 입력하세요 : ");
-                eng = sc.nextInt();
-                math = sc.nextInt();
-                kor = sc.nextInt();
-
-            }
-
-
-            void eval_sum() {    //ComputerSungJuk1
-
-                sum = eng + math + kor;
-
-            }
-
-            void eval_avg() {   //ComputerSungJuk2
-
-                avg = (double) sum / 3;
-            }
-
-            void eval_grade() {    //ComputerSungJuk3
-
-                if (avg >= 90) {
-                    grd = '秀';
-                    System.out.println("평어는 : " + grd + " 입니다.");
-
-                } else if (avg >= 80) {
-                    grd = '優';
-                    System.out.println("평어는 : " + grd + " 입니다.");
-
-                } else if (avg >= 70) {
-                    grd = '美';
-                    System.out.println("평어는 : " + grd + " 입니다.");
-
-                } else if (avg >= 60) {
-                    grd = '良';
-                    System.out.println("평어는 : " + grd + "입니다.");
-
-                } else if (avg >= 50) {
-                    grd = '佳';
-                    System.out.println("평어는 : " + grd + "입니다.");
-
-                } else {
-                    grd = '佳';
-                    System.out.println("평어는 : " + grd + "입니다.");
-
-                }
-            }
-
-
-        }
-    }
-
-    class MidSungJuk2 extends SungJukV7 implements ISungJuk(){
-
-
-
-    }
-
+interface ISungJukV7 {
+    void readSungJuk();
+    void computeSungJuk();
+    void printSungJuk();
 }
+
+class MidSungJuk2 extends SungJukV7
+        implements ISungJukV7 {
+
+    Class FinalSungJuk2 extends SungJukV7 implements ISungJukV7{
+        protected int sci;
+        protected int art;
+
+//빈 생성자
+//생성자 넣기
+
+
+    }
+
+    @Override
+    public void readSungJuk() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("이름을 입력하세요 : ");
+        name = sc.nextLine();
+        System.out.print("국어를 입력하세요 : ");
+        kor = sc.nextInt();
+        System.out.print("영어를 입력하세요 : ");
+        eng = sc.nextInt();
+        System.out.print("수학을 입력하세요 : ");
+        mat = sc.nextInt();
+    }
+
+    @Override
+    public void computeSungJuk() {
+        sum = kor + eng + mat;
+        mean = (double)sum / 3;
+        grd = (mean >= 90) ? '수':
+                (mean >= 80) ? '우':
+                        (mean >= 70) ? '미':
+                                (mean >= 60) ? '양': '가';
+    }
+
+    @Override
+    public void printSungJuk() {
+        String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n"
+                + "수학 : %d\n총점 : %d\n평균 : %.1f\n"
+                + "학점 : %c";
+        String result = String.format(fmt,
+                name, kor, eng, mat,
+                sum, mean, grd);
+
+        System.out.println(result);
+    }
+}
+    }
+

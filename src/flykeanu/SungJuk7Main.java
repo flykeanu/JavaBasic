@@ -27,7 +27,7 @@ public class SungJuk7Main {
 
         FinalSungJuk2 fsj2 = new FinalSungJuk2();
 
-        fsj2.readSungJuk();
+        fsj2.eval_InputScore();
         fsj2.computeSungJuk();
         fsj2.printSungJuk();
 
@@ -39,18 +39,18 @@ abstract class SungJukV7 {
     protected String name;
     protected int kor;
     protected int eng;
-    protected int mat;
+    protected int math;
     protected int sum;
-    protected double mean;
+    protected double avg;
     protected char grd;
 
     public SungJukV7() { }
 
-    public SungJukV7(String name, int kor, int eng, int mat) {
+    public SungJukV7(String name, int kor, int eng, int math) {
         this.name = name;
         this.kor = kor;
         this.eng = eng;
-        this.mat = mat;
+        this.math = math;
     }
 
     public String getName() {
@@ -77,12 +77,12 @@ abstract class SungJukV7 {
         this.eng = eng;
     }
 
-    public int getMat() {
-        return mat;
+    public int getMath() {
+        return math;
     }
 
-    public void setMat(int mat) {
-        this.mat = mat;
+    public void setMath(int mat) {
+        this.math = math;
     }
 
     public int getSum() {
@@ -129,41 +129,29 @@ class MidSungJuk2 extends SungJukV7
 
     }
 
-    @Override
-    public void readSungJuk() {
-        Scanner sc = new Scanner(System.in);
+   class FinalSungJuk2 extends MidSungJuk2() {
+        //부모클래스에 정의된 멤버변수 초기화 코드를
+        //super 라는 이름으로 치환해서 호출할 수 있다
+        //super(생성자 매개변수목록)
+        //super(name, kor, eng, math);
+        int art;
+        int sci;
 
-        System.out.print("이름을 입력하세요 : ");
-        name = sc.nextLine();
-        System.out.print("국어를 입력하세요 : ");
-        kor = sc.nextInt();
-        System.out.print("영어를 입력하세요 : ");
-        eng = sc.nextInt();
-        System.out.print("수학을 입력하세요 : ");
-        mat = sc.nextInt();
+        this.name = name;
+        this.kor = kor;
+        this.eng = eng;
+        this.math = math;
+
+
     }
+    // 부모클래스에 정의된 성적 입력코드를
+    //super 라는 이름으로 치환해서 호출할 수 있음
+    // => super.메서드이름()
 
-    @Override
-    public void computeSungJuk() {
-        sum = kor + eng + mat;
-        mean = (double)sum / 3;
-        grd = (mean >= 90) ? '수':
-                (mean >= 80) ? '우':
-                        (mean >= 70) ? '미':
-                                (mean >= 60) ? '양': '가';
-    }
 
-    @Override
-    public void printSungJuk() {
-        String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n"
-                + "수학 : %d\n총점 : %d\n평균 : %.1f\n"
-                + "학점 : %c";
-        String result = String.format(fmt,
-                name, kor, eng, mat,
-                sum, mean, grd);
 
-        System.out.println(result);
-    }
+
+
 }
     }
 
